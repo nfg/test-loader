@@ -1,6 +1,6 @@
 use strict;
 use warnings;
-package Yarr::GTA;
+package Yarr::Plugin::GTA;
 
 use base qw(Yarr);
 __PACKAGE__->register(GTA => 'Yarr::GTA');

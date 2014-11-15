@@ -3,19 +3,14 @@ use warnings;
 package Yarr;
 
 use Carp 'croak';
-use Module::Loader;
+use Module::Find;
+use Data::Printer;
+
+# Load plugins
+my @found = useall 'Yarr::Plugin';
+print STDERR "Loaded plugins: " . p(@found);
 
 my %HANDLERS;
-
-BEGIN {
-    my $loader = Module::Loader->new();
-    my @plugins = $loader->find_modules('Yarr');
-    foreach my $pkg (@plugins)
-    {
-        $loader->load($pkg);
-    }
-}
-
 sub register
 {
     my (undef, $type, $class) = @_;

@@ -1,6 +1,6 @@
 use strict;
 use warnings;
-package Yarr::ABC;
+package Yarr::Plugin::ABC;
 
 use base qw(Yarr);
 
