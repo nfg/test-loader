@@ -3,7 +3,7 @@ use warnings;
 package Yarr::Plugin::GTA;
 
 use base qw(Yarr);
-__PACKAGE__->register(GTA => 'Yarr::GTA');
+__PACKAGE__->register('GTA');
 
 sub process
 {

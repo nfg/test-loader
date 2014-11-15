@@ -8,12 +8,12 @@ use Data::Printer;
 
 # Load plugins
 my @found = useall 'Yarr::Plugin';
-print STDERR "Loaded plugins: " . p(@found);
+print STDERR "Loaded plugins: " . p(@found) . "\n";
 
 my %HANDLERS;
 sub register
 {
-    my (undef, $type, $class) = @_;
+    my ($class, $type) = @_;
     croak qq(Loading two modules that handle type "$type" -- WTF?)
         if exists $HANDLERS{$type};
     $HANDLERS{$type} = $class;

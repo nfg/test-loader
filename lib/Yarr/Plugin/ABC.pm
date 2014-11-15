@@ -4,7 +4,7 @@ package Yarr::Plugin::ABC;
 
 use base qw(Yarr);
 
-__PACKAGE__->register(ABC => 'Yarr::ABC');
+__PACKAGE__->register('ABC');
 
 sub process
 {
